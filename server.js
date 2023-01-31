@@ -2,20 +2,21 @@ import express from 'express';
 // const urlExist = require('url-exist');
 import urlExist from 'url-exist';
 import { data } from './data.js';
+import cors from 'cors';
 
 // const express = require('express');
 // const data = require('./data');
 // const validUrl = require('valid-url');
 // const urlExist = require('url-exist');
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/url-checker', async (req, res) => {
+app.get('/url-checker/:url', async (req, res) => {
   let newUrl;
   let https = 'https://';
-  let url = typeof req.body?.url === 'string' ? req.body?.url : null;
+  let url = typeof req.params?.url === 'string' ? req.params?.url : null;
 
   if (!url) {
     return res.status.send('Url is not valid');
