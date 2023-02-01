@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "url-exist": "^3.0.1",
+    "url-safety-scanner": "^1.0.4",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
