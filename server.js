@@ -34,7 +34,7 @@ app.get('/url-checker/:url', async (req, res) => {
   try {
     let newUrl;
     let https = 'https://';
-    let url = typeof req.body?.url === 'string' ? req.body?.url : null;
+    let url = typeof req.params?.url === 'string' ? req.params?.url : null;
 
     if (!url) {
       return res.status.send('Url is not valid');
