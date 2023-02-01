@@ -79,7 +79,6 @@ app.get('/url-checker/:url', async (req, res) => {
         }
       }
     } else {
-      console.log('hello');
       newUrl = https.concat(url);
       const linkExist = await urlExist(newUrl);
 
