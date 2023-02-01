@@ -30,11 +30,11 @@ const myScanner = Scanner(config);
 
 // END
 
-app.get('/url-checker/:url', async (req, res) => {
+app.get('/url-checker', async (req, res) => {
   try {
     let newUrl;
     let https = 'https://';
-    let url = typeof req.params?.url === 'string' ? req.params?.url : null;
+    let url = typeof req.body?.url === 'string' ? req.body?.url : null;
 
     if (!url) {
       return res.status.send('Url is not valid');
